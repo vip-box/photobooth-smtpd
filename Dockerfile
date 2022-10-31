@@ -1,5 +1,5 @@
 
-FROM ubuntu:trusty
+FROM ubuntu:22.04
 
 LABEL org.label-schema.url="https://github.com/runlevel/vipbox-smtp" \
     org.label-schema.summary="vipbox smtp image" \
