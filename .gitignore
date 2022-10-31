@@ -1,0 +1,6 @@
+debug.sh
+run.sh
+clean.sh
+build.sh
+sftp-config.json
+assets/domainkeys/mail.*

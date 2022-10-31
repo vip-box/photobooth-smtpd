@@ -1,0 +1,12 @@
+---
+version: "3.1"
+
+services:
+  vipbox-smtp:
+    image: vipbox-smtp
+    ports:
+      - 2525:25
+    environment:
+      - maildomain=mydomain.fr
+      - smtp_user=user:password
+      - rewrite_to=rewrite_email_to
