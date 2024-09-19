@@ -1,4 +1,4 @@
-vipbox-smtp
+Photobooth-smtpd
 ==============
 
 Forked from catatnight/postfix, add a filter for destinations rewrite or other stuff.
@@ -12,7 +12,7 @@ TLS and OpenDKIM support are optional.
 1. Build image
 
 	```bash
-	$ sudo docker pull buchu/vipbox-smtp
+	$ sudo docker pull vip-box/photobooth-smtpd
 	```
 
 ## Usage
@@ -21,7 +21,7 @@ TLS and OpenDKIM support are optional.
 	```bash
 	$ sudo docker run -p 25:25 \
 			-e maildomain=mail.example.com -e smtp_user=user:pwd \
-			--name vipbox-smtp -d buchu/vipbox-smtp
+			--name photobooth-smtpd -d vip-box/photobooth-smtpd
 	# Set multiple user credentials: -e smtp_user=user1:pwd1,user2:pwd2,...,userN:pwdN
 	```
 2. Enable OpenDKIM: save your domain key ```.private``` in ```/path/to/domainkeys```
@@ -30,7 +30,7 @@ TLS and OpenDKIM support are optional.
 	$ sudo docker run -p 25:25 \
 			-e maildomain=mail.example.com -e smtp_user=user:pwd \
 			-v /path/to/domainkeys:/etc/opendkim/domainkeys \
-			--name vipbox-smtp -d vipbox-smtp
+			--name photobooth-smtpd -d photobooth-smtpd
 	```
 3. Enable TLS(587): save your SSL certificates ```.key``` and ```.crt``` to  ```/path/to/certs```
 
@@ -38,7 +38,7 @@ TLS and OpenDKIM support are optional.
 	$ sudo docker run -p 587:587 \
 			-e maildomain=mail.example.com -e smtp_user=user:pwd \
 			-v /path/to/certs:/etc/postfix/certs \
-			--name postfix -d vipbox-smtp
+			--name postfix -d photobooth-smtpd
 	```
 
 4. Add filter for mail, for example that rewrite destinations with ```rewrite_to``` variable, you can edit assets/filter.py and do whatever you want.
@@ -47,7 +47,7 @@ TLS and OpenDKIM support are optional.
 			-e maildomain=mail.example.com \
 			-e smtp_user=user:pwd \
 			-e rewrite_to=user@mydomain.com
-			--name vipbox-smtp -d buchu/vipbox-smtp
+			--name photobooth-smtpd -d vip-box/photobooth-smtpd
 	```
 
 ## Note
