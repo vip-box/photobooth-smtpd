@@ -1,8 +1,8 @@
 
 FROM ubuntu:22.04
 
-LABEL org.label-schema.url="https://github.com/runlevel/vipbox-smtp" \
-    org.label-schema.summary="vipbox smtp image" \
+LABEL org.label-schema.url="https://github.com/vip-box/photobooth-smtpd" \
+    org.label-schema.summary="Photobooth smtpd image" \
     org.label-schema.vendor="Romain Gaillegue <romain@runlevel.fr>"
 
 ENV DEBIAN_FRONTEND noninteractive
