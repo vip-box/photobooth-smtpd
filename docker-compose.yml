@@ -2,8 +2,8 @@
 version: "3.1"
 
 services:
-  vipbox-smtp:
-    image: vipbox-smtp
+  photobooth-smtpd:
+    image: vip-box/photobooth-smtpd
     ports:
       - 2525:25
     environment:
